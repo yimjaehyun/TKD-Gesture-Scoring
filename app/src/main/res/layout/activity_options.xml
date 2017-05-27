@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#808080"
+    android:screenOrientation="landscape"
+    tools:context="com.example.dlawogus.taekwongo.OptionsActivity">
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_weight="1"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Button"
+        tools:layout_editor_absoluteX="252dp"
+        tools:layout_editor_absoluteY="295dp" />
+
+    <LinearLayout
+        android:layout_width="576dp"
+        android:layout_height="343dp"
+        android:weightSum="1"
+        android:screenOrientation="landscape"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/back"
+            android:layout_marginEnd="27dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="27dp"
+            android:layout_marginStart="3dp"
+            android:layout_toLeftOf="@+id/save"
+            android:layout_toStartOf="@+id/save"
+            android:layout_weight="0.03"
+            android:text="Blue's Score"
+            android:textColor="#0000FF"
+            android:textSize="20sp"
+            app:layout_constraintHorizontal_bias="0.06"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/editBlue"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <EditText
+            android:id="@+id/editBlue"
+            android:layout_width="95dp"
+            android:layout_height="43dp"
+            android:layout_weight="0.11"
+            android:ems="10"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="191dp"
+            tools:layout_editor_absoluteY="7dp" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
