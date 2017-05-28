@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity{
     private boolean initialStart, started;
     private long secondsLeft;
 
-    
+
     static final String logTag = "ActivitySwipeDetector";
     private Activity activity;
     static final int MIN_DISTANCE = 100;
@@ -65,9 +65,6 @@ public class MainActivity extends AppCompatActivity{
 
         blue.setText(String.valueOf(BlueScore));
         red.setText(String.valueOf(RedScore));
-//        long min = secondsLeft/60000;
-//        long sec = secondsLeft%60000 / 1000;
-//        time.setText(String.valueOf(min) + ":" + String.valueOf(sec));
 
         //Start/Pause Button listener
         start.setOnClickListener(new View.OnClickListener() {
@@ -323,7 +320,6 @@ public class MainActivity extends AppCompatActivity{
                     }
                     else
                     {
-                        time.setText("0:00");
                         status = false;
                         initialStart = false;
                         started = false;
