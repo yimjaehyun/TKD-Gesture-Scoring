@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity{
     private boolean initialStart, started;
     private long secondsLeft;
 
+    
     static final String logTag = "ActivitySwipeDetector";
     private Activity activity;
     static final int MIN_DISTANCE = 100;
