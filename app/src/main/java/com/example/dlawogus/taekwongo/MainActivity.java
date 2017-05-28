@@ -320,6 +320,8 @@ public class MainActivity extends AppCompatActivity{
                     }
                     else
                     {
+                        if(milliseconds <= 0)
+                            time.setText("0:00");
                         status = false;
                         initialStart = false;
                         started = false;
