@@ -26,12 +26,12 @@ import static android.view.MotionEvent.ACTION_SCROLL;
 
 public class MainActivity extends AppCompatActivity{
 
-    private static TextView blue, red;
-    private int BlueScore, RedScore, tempBlueScore, tempRedScore;
+    public static TextView blue, red;
+    public static int BlueScore, RedScore, tempBlueScore, tempRedScore;
     private TextView time;
     private ImageButton start, options, lock;
     private boolean initialStart, started;
-    private long secondsLeft;
+    public long secondsLeft;
 
     static Bundle data;
 
@@ -280,9 +280,11 @@ public class MainActivity extends AppCompatActivity{
             options.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    data = saveData();
-                    i.putExtras(data);
-                    startActivityForResult(i, 1);
+                    if(!started) {
+                        data = saveData();
+                        i.putExtras(data);
+                        startActivityForResult(i, 1);
+                    }
                 }
             });
         }
