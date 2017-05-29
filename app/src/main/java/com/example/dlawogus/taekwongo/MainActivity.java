@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity{
     private boolean initialStart, started;
     private long secondsLeft;
 
+    static Bundle data;
 
     static final String logTag = "ActivitySwipeDetector";
     private Activity activity;
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity{
         lock = (ImageButton) findViewById(R.id.lock);
 
         //Timer PIV
-        secondsLeft = 5000;
+        secondsLeft = 180000;
         final Timer T = new Timer(secondsLeft, 1000);
         time = (TextView) findViewById(R.id.Timer);
 
@@ -90,17 +91,6 @@ public class MainActivity extends AppCompatActivity{
                 initialStart = !initialStart;
             }
         });
-
-        //Options listener
-        if(!started) {
-            options.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if(!started)
-                        startActivity(new Intent(MainActivity.this, OptionsActivity.class));
-                }
-            });
-        }
 
         //Blue/Red Gesture Event Listener
         blue.setOnTouchListener(new View.OnTouchListener() {
@@ -283,6 +273,27 @@ public class MainActivity extends AppCompatActivity{
 
             }
         });
+
+        //Options listener
+        if(!started) {
+            final Intent i = new Intent(MainActivity.this, OptionsActivity.class);
+            options.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    data = saveData();
+                    i.putExtras(data);
+                    startActivityForResult(i, 1);
+                }
+            });
+        }
+    }
+
+    private Bundle saveData() {
+        Bundle data = new Bundle();
+        data.putInt("BlueScore",BlueScore);
+        data.putInt("RedScore",RedScore);
+        data.putLong("secondsLeft",secondsLeft);
+        return data;
     }
 
     class Timer {
@@ -302,8 +313,9 @@ public class MainActivity extends AppCompatActivity{
             final Runnable counter = new Runnable(){
 
                 public void run(){
+                    secondsLeft = milliseconds;
                     if(milliseconds > 0 && status) {
-                        long sec = milliseconds/1000;
+                        long sec = (milliseconds%60000)/1000;
                         long minutes = milliseconds/60000;
                         String seconds;
                         if (sec < 10) {
@@ -336,6 +348,7 @@ public class MainActivity extends AppCompatActivity{
             status = false;
         }
     }
+
 }
 
 
