@@ -91,7 +91,7 @@
                 android:text="Time:" />
 
             <EditText
-                android:id="@+id/editTime"
+                android:id="@+id/editText5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -100,13 +100,42 @@
                 android:paddingTop="5dp"
                 android:textSize="21sp" />
 
-            <TextView
-                android:id="@+id/textView8"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="5dp"
-                android:paddingTop="5dp"
-                android:text="Swipe Up" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".05">
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.21"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="Swipe Up" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.21">
+
+                    <Switch
+                        android:id="@+id/signUp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.21"
+                        android:text="+/-"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+
+            </LinearLayout>
 
             <EditText
                 android:id="@+id/editSwipeUp"
@@ -118,16 +147,45 @@
                 android:paddingTop="5dp"
                 android:textSize="21sp" />
 
-            <TextView
-                android:id="@+id/textView9"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="5dp"
-                android:paddingTop="10dp"
-                android:text="Swipe Down" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".05">
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.21"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="Swipe Up" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.21">
+
+                    <Switch
+                        android:id="@+id/signUp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.21"
+                        android:text="+/-"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+
+            </LinearLayout>
 
             <EditText
-                android:id="@+id/editSwipeDown"
+                android:id="@+id/editTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -136,36 +194,100 @@
                 android:paddingTop="5dp"
                 android:textSize="21sp" />
 
-            <TextView
-                android:id="@+id/textView2"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp"
-                android:text="Swipe Left" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".05">
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.21"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="Swipe Up" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.21">
+
+                    <Switch
+                        android:id="@+id/signUp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.21"
+                        android:text="+/-"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+
+            </LinearLayout>
 
             <EditText
-                android:id="@+id/editSwipeLeft"
+                android:id="@+id/editText3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight=".7"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:paddingBottom="5dp"
                 android:paddingTop="5dp"
                 android:textSize="21sp" />
 
-            <TextView
-                android:id="@+id/textView3"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp"
-                android:text="Swipe Right" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".05">
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.21"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="Swipe Up" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.21">
+
+                    <Switch
+                        android:id="@+id/signUp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.21"
+                        android:text="+/-"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+
+            </LinearLayout>
 
             <EditText
-                android:id="@+id/editSwipeRight"
+                android:id="@+id/editText4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight=".7"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:paddingBottom="5dp"

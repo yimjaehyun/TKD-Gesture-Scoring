@@ -28,10 +28,12 @@ public class MainActivity extends AppCompatActivity{
 
     public static TextView blue, red;
     public static int BlueScore, RedScore, tempBlueScore, tempRedScore;
+    public static String up, down, left, right;
     private TextView time;
     private ImageButton start, options, lock;
     private boolean initialStart, started;
-    public long secondsLeft;
+    public static long secondsLeft;
+    public static Timer T;
 
     static Bundle data;
 
@@ -45,6 +47,12 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+        //default gestures
+        up = "+3";
+        down = "-1";
+        left = "undo";
+        right = "+0";
 
         //Score PIV
         blue = (TextView) findViewById(R.id.scoreBlue);
@@ -61,7 +69,7 @@ public class MainActivity extends AppCompatActivity{
 
         //Timer PIV
         secondsLeft = 180000;
-        final Timer T = new Timer(secondsLeft, 1000);
+        T = new Timer(secondsLeft, 1000);
         time = (TextView) findViewById(R.id.Timer);
 
         blue.setText(String.valueOf(BlueScore));
@@ -88,7 +96,8 @@ public class MainActivity extends AppCompatActivity{
         lock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                initialStart = !initialStart;
+                if(!started)
+                    initialStart = !initialStart;
             }
         });
 
@@ -299,7 +308,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
     class Timer {
-        private long milliseconds;
+        public long milliseconds;
         private long countDownInterval;
         private boolean status;
 
@@ -308,6 +317,11 @@ public class MainActivity extends AppCompatActivity{
             this.countDownInterval = pCountDownInterval;
             status = false;
         }
+
+        public void setTime(long newTime){
+            milliseconds = newTime;
+        }
+
         public void Start()
         {
             status = true;
