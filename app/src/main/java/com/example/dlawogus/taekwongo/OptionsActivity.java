@@ -12,7 +12,7 @@ import android.widget.Switch;
 public class OptionsActivity extends AppCompatActivity {
 
     private ImageButton BackButton;
-    private EditText editBlueScore, editRedScore, SwipeUp, SwipeDown, SwipeLeft, SwipeRight, editTime;
+    private EditText editBlueScore, editRedScore, editSwipeUp, editSwipeDown, editSwipeLeft, editSwipeRight, editTime;
     private Switch SwitchUp, SwitchDown, SwitchLeft, SwitchRight;
     private int BlueScore, RedScore;
     private long secondsLeft;
@@ -32,10 +32,10 @@ public class OptionsActivity extends AppCompatActivity {
         SwitchRight = (Switch) findViewById(R.id.signRIght);
         editBlueScore = (EditText) findViewById(R.id.editBlueScore);
         editRedScore = (EditText) findViewById(R.id.editRedScore);
-        SwipeUp = (EditText) findViewById(R.id.editSwipeUp);
-        SwipeDown = (EditText) findViewById(R.id.editSwipeDown);
-        SwipeLeft = (EditText) findViewById(R.id.editSwipeLeft);
-        SwipeRight = (EditText) findViewById(R.id.editSwipeRight);
+        editSwipeUp = (EditText) findViewById(R.id.editSwipeUp);
+        editSwipeDown = (EditText) findViewById(R.id.editSwipeDown);
+        editSwipeLeft = (EditText) findViewById(R.id.editSwipeLeft);
+        editSwipeRight = (EditText) findViewById(R.id.editSwipeRight);
         editTime = (EditText) findViewById(R.id.editTime);
         save = (Button) findViewById(R.id.save);
 
@@ -64,35 +64,60 @@ public class OptionsActivity extends AppCompatActivity {
                 MainActivity.blue.setText(String.valueOf(MainActivity.BlueScore));
                 MainActivity.RedScore = Integer.valueOf(String.valueOf(editRedScore.getText()));
                 MainActivity.red.setText(String.valueOf(MainActivity.RedScore));
+
+                MainActivity.up = editSwipeUp.getText().toString();
+                MainActivity.down = editSwipeDown.getText().toString();
+                MainActivity.left = editSwipeLeft.getText().toString();
+                MainActivity.right = editSwipeRight.getText().toString();
+
+                if(SwitchUp.isChecked())
+                    MainActivity.signUp = "+";
+                else
+                    MainActivity.signUp = "-";
+
+                if(SwitchDown.isChecked())
+                    MainActivity.signDown = "+";
+                else
+                    MainActivity.signDown = "-";
+
+                if(SwitchLeft.isChecked())
+                    MainActivity.signLeft = "+";
+                else
+                    MainActivity.signLeft = "-";
+
+                if(SwitchRight.isChecked())
+                    MainActivity.signRight = "+";
+                else
+                    MainActivity.signRight = "-";
             }
         });
 
         editBlueScore.setText(String.valueOf(BlueScore));
         editRedScore.setText(String.valueOf(RedScore));
         editTime.setText(String.valueOf((secondsLeft/1000) + 1));
-        SwipeUp.setText(MainActivity.up);
-        SwipeDown.setText(MainActivity.down);
-        SwipeLeft.setText(MainActivity.left);
-        SwipeRight.setText(MainActivity.right);
+        editSwipeUp.setText(MainActivity.up);
+        editSwipeDown.setText(MainActivity.down);
+        editSwipeLeft.setText(MainActivity.left);
+        editSwipeRight.setText(MainActivity.right);
 
-        if(MainActivity.signUp == "+")
+        if(MainActivity.signUp.equals("+"))
             SwitchUp.setChecked(true);
-        else if(MainActivity.signUp == "-")
+        else if(MainActivity.signUp.equals("-"))
             SwitchUp.setChecked(false);
 
-        if(MainActivity.signDown == "+")
+        if(MainActivity.signDown.equals("+"))
             SwitchDown.setChecked(true);
-        else if(MainActivity.signDown == "-")
+        else if(MainActivity.signDown.equals("-"))
             SwitchDown.setChecked(false);
 
-        if(MainActivity.signLeft == "+")
+        if(MainActivity.signLeft.equals("+"))
             SwitchLeft.setChecked(true);
-        else if(MainActivity.signLeft == "-")
+        else if(MainActivity.signLeft.equals("-"))
             SwitchLeft.setChecked(false);
 
-        if(MainActivity.signRight == "+")
+        if(MainActivity.signRight.equals("+"))
             SwitchRight.setChecked(true);
-        else if(MainActivity.signRight == "-")
+        else if(MainActivity.signRight.equals("-"))
             SwitchRight.setChecked(false);
     }
 

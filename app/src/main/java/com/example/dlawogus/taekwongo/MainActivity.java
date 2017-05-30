@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity{
 
         signUp = "+";
         signDown="-";
-        signLeft="undo";
-        signRight="";
+        signLeft="+";
+        signRight="+";
 
         //Score PIV
         blue = (TextView) findViewById(R.id.scoreBlue);
@@ -173,47 +173,52 @@ public class MainActivity extends AppCompatActivity{
 
                 private void onUpSwipe() {
                     if(initialStart) {
-                        tempBlueScore = BlueScore;
-                        if(up == "undo") {
+                        if(up.isEmpty())
+                            BlueScore = BlueScore;
+                        else if(up.equals("undo")) {
                             BlueScore = tempBlueScore;
-                            blue.setText(String.valueOf(BlueScore));
                         }
-                        else if(signUp == "+") {
+                        else if(signUp.equals("+")) {
                             tempBlueScore = BlueScore;
                             BlueScore = BlueScore + Integer.valueOf(up);
                         }
-                        else if(signUp == "-") {
+                        else if(signUp.equals("-")) {
                             tempBlueScore = BlueScore;
                             BlueScore = BlueScore - Integer.valueOf(up);
                         }
+                        else
+                            BlueScore = BlueScore;
                         blue.setText(String.valueOf(BlueScore));
                     }
                 }
 
                 private void onDownSwipe() {
                     if(initialStart) {
-                        if(down == "undo") {
+                        if(down.isEmpty())
+                            BlueScore = BlueScore;
+                        else if(down.equals("undo")) {
                             BlueScore = tempBlueScore;
-                            blue.setText(String.valueOf(BlueScore));
                         }
-                        else if(signDown == "+") {
+                        else if(signDown.equals("+")) {
                             tempBlueScore = BlueScore;
                             BlueScore = BlueScore + Integer.valueOf(down);
                         }
-                        else if(signDown == "-"){
+                        else if(signDown.equals("-")){
                             tempBlueScore = BlueScore;
                             BlueScore = BlueScore - Integer.valueOf(down);
                         }
+                        else
+                            BlueScore = BlueScore;
                         blue.setText(String.valueOf(BlueScore));
                     }
                 }
 
                 private void onLeftSwipe() {
                     if(initialStart) {
-                        BlueScore = tempBlueScore;
-                        if(left == "undo") {
+                        if(left.isEmpty())
+                            BlueScore = BlueScore;
+                        else if(left.equals("undo")) {
                             BlueScore = tempBlueScore;
-                            blue.setText(String.valueOf(BlueScore));
                         }
                         else if(signLeft == "+") {
                             tempBlueScore = BlueScore;
@@ -223,24 +228,29 @@ public class MainActivity extends AppCompatActivity{
                             tempBlueScore = BlueScore;
                             BlueScore = BlueScore - Integer.valueOf(left);
                         }
+                        else
+                            BlueScore = BlueScore;
                         blue.setText(String.valueOf(BlueScore));
                     }
                 }
 
                 private void onRightSwipe() {
                     if(initialStart) {
-                        if(right == "undo") {
+                        if(right.isEmpty())
+                            BlueScore = BlueScore;
+                        else if(right.equals("undo")) {
                             BlueScore = tempBlueScore;
-                            blue.setText(String.valueOf(BlueScore));
                         }
-                        else if(signRight == "+") {
+                        else if(signRight.equals("+")) {
                             tempBlueScore = BlueScore;
                             BlueScore = BlueScore + Integer.valueOf(right);
                         }
-                        else if(signRight == "-"){
+                        else if(signRight.equals("-")){
                             tempBlueScore = BlueScore;
                             BlueScore = BlueScore - Integer.valueOf(right);
                         }
+                        else
+                            BlueScore = BlueScore;
                         blue.setText(String.valueOf(BlueScore));
                     }
                 }
@@ -310,9 +320,10 @@ public class MainActivity extends AppCompatActivity{
 
             private void onUpSwipe() {
                 if(initialStart) {
-                    if(up == "undo") {
+                    if(up.isEmpty())
+                        BlueScore = BlueScore;
+                    else if(up.equals("undo")) {
                         RedScore = tempRedScore;
-                        red.setText(String.valueOf(RedScore));
                     }
                     else if(signUp == "+") {
                         tempRedScore = RedScore;
@@ -322,15 +333,18 @@ public class MainActivity extends AppCompatActivity{
                         tempRedScore = RedScore;
                         RedScore = RedScore - Integer.valueOf(up);
                     }
+                    else
+                        RedScore = RedScore;
                     red.setText(String.valueOf(RedScore));
                 }
             }
 
             private void onDownSwipe() {
                 if(initialStart) {
-                    if(down == "undo") {
+                    if(down.isEmpty())
+                        BlueScore = BlueScore;
+                    else if(down.equals("undo")) {
                         RedScore = tempRedScore;
-                        red.setText(String.valueOf(RedScore));
                     }
                     else if(signDown == "+") {
                         tempRedScore = RedScore;
@@ -340,15 +354,18 @@ public class MainActivity extends AppCompatActivity{
                         tempRedScore = RedScore;
                         RedScore = RedScore - Integer.valueOf(down);
                     }
+                    else
+                        RedScore = RedScore;
                     red.setText(String.valueOf(RedScore));
                 }
             }
 
             private void onLeftSwipe() {
                 if(initialStart) {
-                    if(left == "undo") {
+                    if(left.isEmpty())
+                        BlueScore = BlueScore;
+                    else if(left.equals("undo")) {
                         RedScore = tempRedScore;
-                        red.setText(String.valueOf(RedScore));
                     }
                     else if(signLeft == "+") {
                         tempRedScore = RedScore;
@@ -358,15 +375,18 @@ public class MainActivity extends AppCompatActivity{
                         tempRedScore = RedScore;
                         RedScore = RedScore - Integer.valueOf(left);
                     }
+                    else
+                        RedScore = RedScore;
                     red.setText(String.valueOf(RedScore));
                 }
             }
 
             private void onRightSwipe() {
                 if(initialStart) {
-                    if(right == "undo") {
+                    if(right.isEmpty())
+                        BlueScore = BlueScore;
+                    else if(right.equals("undo")) {
                         RedScore = tempRedScore;
-                        red.setText(String.valueOf(RedScore));
                     }
                     else if(signRight == "+") {
                         tempRedScore = RedScore;
@@ -376,6 +396,8 @@ public class MainActivity extends AppCompatActivity{
                         tempRedScore = RedScore;
                         RedScore = RedScore - Integer.valueOf(right);
                     }
+                    else
+                        RedScore = RedScore;
                     red.setText(String.valueOf(RedScore));
                 }
             }

@@ -290,8 +290,7 @@
                         android:layout_weight="0.21"
                         android:checked="false"
                         android:text="-/+"
-                        android:textSize="15sp"
-                        tools:checked="false" />
+                        android:textSize="15sp" />
                 </RelativeLayout>
 
             </LinearLayout>
