@@ -173,84 +173,90 @@ public class MainActivity extends AppCompatActivity{
 
                 private void onUpSwipe() {
                     if(initialStart) {
-                        if(up.isEmpty())
-                            BlueScore = BlueScore;
-                        else if(up.equals("undo")) {
-                            BlueScore = tempBlueScore;
+                        if(!up.isEmpty())
+                        {
+                            if(up.equals("undo")) {
+                                BlueScore = tempBlueScore;
+                            }
+                            if (up.matches("[0-9]+"))
+                            {
+                                if(signUp.equals("+")) {
+                                    tempBlueScore = BlueScore;
+                                    BlueScore = BlueScore + Integer.valueOf(up);
+                                }
+                                else if(signUp.equals("-")) {
+                                    tempBlueScore = BlueScore;
+                                    BlueScore = BlueScore - Integer.valueOf(up);
+                                }
+                            }
                         }
-                        else if(signUp.equals("+")) {
-                            tempBlueScore = BlueScore;
-                            BlueScore = BlueScore + Integer.valueOf(up);
-                        }
-                        else if(signUp.equals("-")) {
-                            tempBlueScore = BlueScore;
-                            BlueScore = BlueScore - Integer.valueOf(up);
-                        }
-                        else
-                            BlueScore = BlueScore;
                         blue.setText(String.valueOf(BlueScore));
                     }
                 }
 
                 private void onDownSwipe() {
                     if(initialStart) {
-                        if(down.isEmpty())
-                            BlueScore = BlueScore;
-                        else if(down.equals("undo")) {
-                            BlueScore = tempBlueScore;
+                        if(!down.isEmpty())
+                        {
+                            if(down.equals("undo")) {
+                                BlueScore = tempBlueScore;
+                            }
+                            if (down.matches("[0-9]+"))
+                            {
+                                if(signDown.equals("+")) {
+                                    tempBlueScore = BlueScore;
+                                    BlueScore = BlueScore + Integer.valueOf(down);
+                                }
+                                else if(signDown.equals("-")) {
+                                    tempBlueScore = BlueScore;
+                                    BlueScore = BlueScore - Integer.valueOf(down);
+                                }
+                            }
                         }
-                        else if(signDown.equals("+")) {
-                            tempBlueScore = BlueScore;
-                            BlueScore = BlueScore + Integer.valueOf(down);
-                        }
-                        else if(signDown.equals("-")){
-                            tempBlueScore = BlueScore;
-                            BlueScore = BlueScore - Integer.valueOf(down);
-                        }
-                        else
-                            BlueScore = BlueScore;
                         blue.setText(String.valueOf(BlueScore));
                     }
                 }
 
                 private void onLeftSwipe() {
-                    if(initialStart) {
-                        if(left.isEmpty())
-                            BlueScore = BlueScore;
-                        else if(left.equals("undo")) {
+                    if(!left.isEmpty())
+                    {
+                        if(left.equals("undo")) {
                             BlueScore = tempBlueScore;
                         }
-                        else if(signLeft == "+") {
-                            tempBlueScore = BlueScore;
-                            BlueScore = BlueScore + Integer.valueOf(left);
+                        if (left.matches("[0-9]+"))
+                        {
+                            if(signLeft.equals("+")) {
+                                tempBlueScore = BlueScore;
+                                BlueScore = BlueScore + Integer.valueOf(left);
+                            }
+                            else if(signLeft.equals("-")) {
+                                tempBlueScore = BlueScore;
+                                BlueScore = BlueScore - Integer.valueOf(left);
+                            }
                         }
-                        else if(signLeft == "-") {
-                            tempBlueScore = BlueScore;
-                            BlueScore = BlueScore - Integer.valueOf(left);
-                        }
-                        else
-                            BlueScore = BlueScore;
-                        blue.setText(String.valueOf(BlueScore));
                     }
+                    blue.setText(String.valueOf(BlueScore));
                 }
 
                 private void onRightSwipe() {
                     if(initialStart) {
-                        if(right.isEmpty())
-                            BlueScore = BlueScore;
-                        else if(right.equals("undo")) {
-                            BlueScore = tempBlueScore;
+                        if(!right.isEmpty())
+                        {
+                            if(right.equals("undo")) {
+                                BlueScore = tempBlueScore;
+                            }
+                            if (right.matches("[0-9]+"))
+                            {
+                                if(signRight.equals("+")) {
+                                    tempBlueScore = BlueScore;
+                                    BlueScore = BlueScore + Integer.valueOf(right);
+                                }
+                                else if(signRight.equals("-")) {
+                                    tempBlueScore = BlueScore;
+                                    BlueScore = BlueScore - Integer.valueOf(right);
+                                }
+                            }
                         }
-                        else if(signRight.equals("+")) {
-                            tempBlueScore = BlueScore;
-                            BlueScore = BlueScore + Integer.valueOf(right);
-                        }
-                        else if(signRight.equals("-")){
-                            tempBlueScore = BlueScore;
-                            BlueScore = BlueScore - Integer.valueOf(right);
-                        }
-                        else
-                            BlueScore = BlueScore;
                         blue.setText(String.valueOf(BlueScore));
                     }
                 }
@@ -320,84 +326,90 @@ public class MainActivity extends AppCompatActivity{
 
             private void onUpSwipe() {
                 if(initialStart) {
-                    if(up.isEmpty())
-                        BlueScore = BlueScore;
-                    else if(up.equals("undo")) {
-                        RedScore = tempRedScore;
+                    if(!up.isEmpty())
+                    {
+                        if(up.equals("undo")) {
+                            RedScore = tempRedScore;
+                        }
+                        if (up.matches("[0-9]+"))
+                        {
+                            if(signUp.equals("+")) {
+                                tempRedScore = RedScore;
+                                RedScore = RedScore + Integer.valueOf(up);
+                            }
+                            else if(signUp.equals("-")) {
+                                tempRedScore = RedScore;
+                                RedScore = RedScore - Integer.valueOf(up);
+                            }
+                        }
                     }
-                    else if(signUp == "+") {
-                        tempRedScore = RedScore;
-                        RedScore = RedScore + Integer.valueOf(up);
-                    }
-                    else if(signUp == "-"){
-                        tempRedScore = RedScore;
-                        RedScore = RedScore - Integer.valueOf(up);
-                    }
-                    else
-                        RedScore = RedScore;
                     red.setText(String.valueOf(RedScore));
                 }
             }
 
             private void onDownSwipe() {
                 if(initialStart) {
-                    if(down.isEmpty())
-                        BlueScore = BlueScore;
-                    else if(down.equals("undo")) {
-                        RedScore = tempRedScore;
+                    if(!down.isEmpty())
+                    {
+                        if(down.equals("undo")) {
+                            RedScore = tempRedScore;
+                        }
+                        if (down.matches("[0-9]+"))
+                        {
+                            if(signDown.equals("+")) {
+                                tempRedScore = RedScore;
+                                RedScore = RedScore + Integer.valueOf(down);
+                            }
+                            else if(signDown.equals("-")) {
+                                tempRedScore = RedScore;
+                                RedScore = RedScore - Integer.valueOf(down);
+                            }
+                        }
                     }
-                    else if(signDown == "+") {
-                        tempRedScore = RedScore;
-                        RedScore = RedScore + Integer.valueOf(down);
-                    }
-                    else if(signDown == "-"){
-                        tempRedScore = RedScore;
-                        RedScore = RedScore - Integer.valueOf(down);
-                    }
-                    else
-                        RedScore = RedScore;
                     red.setText(String.valueOf(RedScore));
                 }
             }
 
             private void onLeftSwipe() {
-                if(initialStart) {
-                    if(left.isEmpty())
-                        BlueScore = BlueScore;
-                    else if(left.equals("undo")) {
+                if(!left.isEmpty())
+                {
+                    if(left.equals("undo")) {
                         RedScore = tempRedScore;
                     }
-                    else if(signLeft == "+") {
-                        tempRedScore = RedScore;
-                        RedScore = RedScore + Integer.valueOf(left);
+                    if (left.matches("[0-9]+"))
+                    {
+                        if(signLeft.equals("+")) {
+                            tempRedScore = RedScore;
+                            RedScore = RedScore + Integer.valueOf(left);
+                        }
+                        else if(signLeft.equals("-")) {
+                            tempRedScore = RedScore;
+                            RedScore = RedScore - Integer.valueOf(left);
+                        }
                     }
-                    else if(signLeft == "-"){
-                        tempRedScore = RedScore;
-                        RedScore = RedScore - Integer.valueOf(left);
-                    }
-                    else
-                        RedScore = RedScore;
-                    red.setText(String.valueOf(RedScore));
                 }
+                red.setText(String.valueOf(RedScore));
             }
 
             private void onRightSwipe() {
                 if(initialStart) {
-                    if(right.isEmpty())
-                        BlueScore = BlueScore;
-                    else if(right.equals("undo")) {
-                        RedScore = tempRedScore;
+                    if(!right.isEmpty())
+                    {
+                        if(right.equals("undo")) {
+                            RedScore = tempRedScore;
+                        }
+                        if (right.matches("[0-9]+"))
+                        {
+                            if(signRight.equals("+")) {
+                                tempRedScore = RedScore;
+                                RedScore = RedScore + Integer.valueOf(right);
+                            }
+                            else if(signRight.equals("-")) {
+                                tempRedScore = RedScore;
+                                RedScore = RedScore - Integer.valueOf(right);
+                            }
+                        }
                     }
-                    else if(signRight == "+") {
-                        tempRedScore = RedScore;
-                        RedScore = RedScore + Integer.valueOf(right);
-                    }
-                    else if(signRight == "-"){
-                        tempRedScore = RedScore;
-                        RedScore = RedScore - Integer.valueOf(right);
-                    }
-                    else
-                        RedScore = RedScore;
                     red.setText(String.valueOf(RedScore));
                 }
             }
