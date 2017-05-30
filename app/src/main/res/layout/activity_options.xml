@@ -134,8 +134,12 @@
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
                         android:layout_weight="0.21"
-                        android:text="+/-"
-                        android:textSize="15sp" />
+                        android:checked="false"
+                        android:text="-/+"
+                        android:textOff="-"
+                        android:textOn="+"
+                        android:textSize="15sp"
+                        tools:checked="false" />
                 </RelativeLayout>
 
             </LinearLayout>
@@ -181,8 +185,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.21"
-                        android:text="+/-"
-                        android:textSize="15sp" />
+                        android:checked="false"
+                        android:text="-/+"
+                        android:textSize="15sp"
+                        tools:checked="false" />
                 </RelativeLayout>
 
             </LinearLayout>
@@ -230,8 +236,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.21"
-                        android:text="+/-"
-                        android:textSize="15sp" />
+                        android:checked="false"
+                        android:text="-/+"
+                        android:textSize="15sp"
+                        tools:checked="false" />
                 </RelativeLayout>
 
             </LinearLayout>
@@ -280,8 +288,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.21"
-                        android:text="+/-"
-                        android:textSize="15sp" />
+                        android:checked="false"
+                        android:text="-/+"
+                        android:textSize="15sp"
+                        tools:checked="false" />
                 </RelativeLayout>
 
             </LinearLayout>
