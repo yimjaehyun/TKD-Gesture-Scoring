@@ -70,6 +70,22 @@ public class OptionsActivity extends AppCompatActivity {
                 MainActivity.left = editSwipeLeft.getText().toString();
                 MainActivity.right = editSwipeRight.getText().toString();
 
+                secondsLeft = Long.valueOf(editTime.getText().toString()).longValue() * 1000;
+                MainActivity.T = new MainActivity.Timer(secondsLeft, 1000);
+                long sec = (secondsLeft%60000)/1000;
+                long minutes = secondsLeft/60000;
+                String seconds;
+                if (sec < 10) {
+                    seconds = "0" + String.valueOf(sec);
+                }
+                else {
+                    seconds = String.valueOf(sec);
+                }
+                MainActivity.time.setText(minutes + ":" + seconds);
+                if(seconds.equals("0:00"))
+                    MainActivity.initialStart = false;
+                MainActivity.secondsLeft = secondsLeft;
+
                 if(SwitchUp.isChecked())
                     MainActivity.signUp = "+";
                 else

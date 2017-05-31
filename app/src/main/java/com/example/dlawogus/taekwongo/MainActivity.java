@@ -30,11 +30,12 @@ public class MainActivity extends AppCompatActivity{
     public static int BlueScore, RedScore, tempBlueScore, tempRedScore;
     public static String up, down, left, right;
     public static String signUp, signDown, signLeft, signRight;
-    private TextView time;
+    public static TextView time;
     private ImageButton start, options, lock;
-    private boolean initialStart, started;
+    public static boolean initialStart;
+    public static boolean started;
     public static long secondsLeft;
-    private static Timer T;
+    public static Timer T;
 
     static Bundle data;
 
@@ -439,7 +440,7 @@ public class MainActivity extends AppCompatActivity{
         return data;
     }
 
-    class Timer {
+    static class Timer {
         public long milliseconds;
         private long countDownInterval;
         private boolean status;
