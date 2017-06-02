@@ -26,8 +26,8 @@ import static android.view.MotionEvent.ACTION_SCROLL;
 
 public class MainActivity extends AppCompatActivity{
 
-    public static TextView blue, red;
-    public static int BlueScore, RedScore, tempBlueScore, tempRedScore;
+    public static TextView blue, red, rounds;
+    public static int BlueScore, RedScore, tempBlueScore, tempRedScore, numRounds, currRounds;
     public static String up, down, left, right;
     public static String signUp, signDown, signLeft, signRight;
     public static TextView time;
@@ -49,6 +49,11 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+        //rounds
+        rounds = (TextView) findViewById(R.id.Round);
+        currRounds = 1;
+        numRounds = 3;
 
         //default gestures
         up = "3";
@@ -91,10 +96,12 @@ public class MainActivity extends AppCompatActivity{
                 if(started) {
                     initialStart = true;
                     T.Start();
+                    start.setImageResource(android.R.drawable.ic_media_pause);
                 }
                 else {
                     initialStart = false;
                     T.Stop();
+                    start.setImageResource(android.R.drawable.ic_media_play);
                 }
             }
         });
